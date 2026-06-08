@@ -1,0 +1,389 @@
+.marketplace>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
+    width: 86em;
+    height: 56em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: 0.9em;
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.marketplace>div::before,
+.marketplace>div::after {
+    content: "";
+    position: absolute;
+    width: 70rem;
+    height: 50rem;
+    border-radius: 50%;
+    opacity: .1;
+    z-index: 1;
+    background: radial-gradient(var(--main-color) 10%, transparent 70%);
+}
+
+.marketplace>div::before {
+    transform: translate(-50%, -50%);
+    top: 0rem;
+    left: 10em;
+}
+
+.marketplace>div::after {
+    transform: translate(50%, 50%);
+    bottom: 0rem;
+    right: 10em;
+}
+
+.marketplace>div>.menu {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    z-index: 100;
+}
+
+.marketplace .menu>.main>div .text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box {
+    position: relative;
+    padding: 1em;
+    background: var(--submenu-background-selected);
+    overflow: hidden;
+    width: 100%;
+    height: 54em;
+    border-radius: 0.6em;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>div {
+    position: relative;
+    z-index: 30;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    overflow: overlay;
+    max-height: 90%;
+    border-radius: 0.6em;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div {
+    padding: 1em;
+    background: var(--submenu-background-selected-hover);
+    border: 1px solid #ffffff0f;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div:hover {
+    background: #252232;
+    scale: 0.98;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div>.image {
+    width: 100%;
+    height: 13em;
+    margin-bottom: 0.5em;
+    border-radius: 0.6em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div>.price {
+    display: flex;
+    gap: 1em;
+    font-weight: 600;
+    color: #a5a5a5;
+    font-size: 0.85em;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div>.price>span {
+    background: #e7e7e712;
+    border: 1px solid #ffffff08;
+    padding: 0.2em 0.6em;
+    border-radius: 100px;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div>.address {
+    font-weight: 700;
+    font-size: 1.3em;
+    margin-block: 0.4em 0.8em;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div>.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div>.info>div {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div>.info>div>i {
+    font-size: 1.1em;
+    color: var(--main-color);
+    filter: brightness(1.7);
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div>.info>div>div {
+    line-height: 1.1;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div>.info>div>div>.title {
+    color: var(--secondary-text-color);
+    font-weight: 400;
+}
+
+.marketplace div[data-type="list"] .side-boxes>.box>.options>div>.info>div>div>.description {
+    color: var(--primary-text-color);
+    font-weight: 600;
+}
+
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options {
+    display: grid;
+    gap: 1em;
+    max-height: 51em;
+    overflow: overlay;
+    border-radius: 0.5em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div {
+    padding: 1em;
+    background: var(--submenu-background-selected-hover);
+    border-radius: 0.5em;
+    transition: 0.2s;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div>.label {
+    font-weight: 700;
+    font-size: 1.9em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images>#image {
+    /* height: 100%; */
+    height: 23em;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.5em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images>#image:hover {
+    scale: 0.98;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images>.second-image {}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images>.second-image > div {
+    width: 100%;
+    height: 100%;
+    /* aspect-ratio: 16 / 9; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 0.6em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images>.second-image > div:hover {
+    scale: 0.98;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images>.two-images {
+
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images>.three-images {
+    display: grid;
+    gap: 1em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images>.four-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images>.four-images > div:nth-child(3) {
+    width: 205%;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#images>.five-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations {
+
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.name {
+    font-size: 1.1em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.price {
+    font-weight: 700;
+    font-size: 2.2em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.price>span {
+    font-size: 0.55em;
+    font-weight: 500;
+    opacity: 0.8;
+    margin-left: 0.8em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.offer-mode {
+    display: flex;
+    gap: 1em;
+    margin-block: 0.5em 0.8em;
+    font-weight: 700;
+    color: #a5a5a5;
+    font-size: 0.85em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.offer-mode > div {
+    background: #e7e7e712;
+    border: 1px solid #ffffff08;
+    padding: 0.2em 0.9em;
+    border-radius: 100px;
+    height: 1.7em;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.offer-mode > div:hover {
+    background: #e7e7e72c;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.offer-mode > div.active {
+    color: var(--main-color);
+    background: #573cfa2e;
+    filter: brightness(2);
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.address {
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.address>i{
+    margin-right: 0.3em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.address>span{
+    font-weight: 700;
+    margin-left: 0.5em;
+    color: var(--main-color);
+    filter: brightness(2);
+    text-decoration: none;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.address>span:hover{
+    text-decoration: underline;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.view-contract {
+    color: var(--main-color);
+    background: #573cfa2e;
+    filter: brightness(2);
+    border: 1px solid #ffffff08;
+    padding: 0.2em 0.9em;
+    border-radius: 100px;
+    height: 1.7em;
+    cursor: pointer;
+    width: fit-content;
+    line-height: 1.2;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 1em;
+    transition: 0.2s;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.view-contract.disabled {
+    opacity: 0.9;
+    cursor: not-allowed;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#main-informations>.view-contract:not(.disabled):hover {
+    background: #583cfa65;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#property-informations {
+
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#property-informations>#table {
+
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#property-informations>#table>div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#property-informations>#table>hr {
+    margin-block: 0.3em;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#property-informations>#table>div>div>span {
+    display: block;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#property-description {
+    
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.options>div#property-description>.data {
+    white-space: pre-line
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.big-image {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    width: 100%;
+    background: #00000094;
+    height: 100%;
+}
+
+.marketplace div[data-type="offer"] .side-boxes>.box>.big-image > img {
+    position: absolute;
+    width: 90%;
+    border-radius: 0.6em;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 30px 30px 60px #00000096, -30px -30px 60px #00000096;
+}

@@ -1,0 +1,426 @@
+.property_furniture {
+    height: 100vh;
+}
+
+.property_furniture>div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: top left;
+
+    padding: 1em;
+    width: 25em;
+    height: 97%;
+    margin-left: 1em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: 0.9em;
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.property_furniture>div>.menu {
+    display: flex;
+    flex-direction: column;
+    
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.property_furniture>div>.menu>#categories > #elements {
+    margin-top: 0.5em;
+}
+
+
+.property_furniture>div>.menu>#items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    margin-top: 1em;
+}
+
+.property_furniture>div>.menu>#items > #search {
+    position: relative;
+    display: flex;
+    margin-bottom: 0.8em;
+    margin-top: 0.4em;
+}
+
+.property_furniture>div>.menu>#items > #search > i {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 2.5em;
+    opacity: 0.3;
+}
+
+.property_furniture>div>.menu>#items > #search > input {
+    width: 100%;
+
+    background: var(--submenu-background-selected-hover);
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.074);
+    
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    
+    font-weight: 300;
+    color: var(--primary-text-color);
+    padding-inline: 0.3em;
+    line-height: 1.8;
+    border-right: none;
+    
+    
+    padding-left: 2.3em;
+    border: 1px solid rgba(255, 255, 255, 0.074);
+
+    border-radius: 0.3em;
+}
+
+.property_furniture>div>.menu>#categories > span.title,
+.property_furniture>div>.menu>#items > span.title {
+    font-size: 1.0em;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.property_furniture>div>.menu>#categories > span.title>.separator,
+.property_furniture>div>.menu>#items > span.title>.separator {
+    opacity: 0.5;
+    height: 1.5px;
+    background: var(--primary-text-color);
+    width: 100%;
+    opacity: 0.2;
+}
+
+
+.property_furniture>div>.menu>#categories > #elements,
+.property_furniture>div>.menu>#items > #elements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5em;
+    height: fit-content;
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+.property_furniture>div>.menu>#categories > #elements {
+    max-height: 10em;
+}
+
+.property_furniture>div>.menu>#items > #elements {
+    flex: 1;
+    overflow-y: auto;
+    place-content: flex-start;
+    /* max-height: 67.5em; */
+}
+
+.property_furniture>div>.menu>#categories > #elements > div {
+    position: relative;
+    background: var(--submenu-background-selected);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 1.6em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: 0.1s;
+    overflow: hidden;
+}
+
+.property_furniture>div>.menu>#categories > #elements > div.active {
+    background: var(--submenu-background-selected-hover);
+}
+
+.property_furniture>div>.menu>#categories > #elements > div.active img {
+    opacity: 0.5 !important;
+}
+
+.property_furniture>div>.menu>#categories > #elements > div:hover {
+    background: var(--submenu-background-selected-hover);
+}
+
+.property_furniture>div>.menu>#categories > #elements > div .label > img {
+    position: absolute;
+    width: 2.75em;
+    margin-top: 0.1em;
+    top: 0;
+    filter: invert(1);
+    opacity: 0.3;
+    rotate: 12deg;
+    transition: 0.15s;
+}
+
+.property_furniture>div>.menu>#categories > #elements > div .label {
+    position: absolute;
+    width: 100%;
+    padding: 0.3em;
+    font-size: 0.7em;
+    color: var(--primary-text-color);
+    z-index: 5000;
+}
+
+.property_furniture>div>.menu>#categories > #elements > div .label > p.name {
+    text-align: end;
+    font-weight: 700;
+    padding-right: 0.3em;
+}
+
+.property_furniture>div>.menu>#items > #elements > div {
+    position: relative;
+    background: var(--submenu-background-selected);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 9em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.1s;
+}
+
+.property_furniture>div>.menu>#items > #elements > div:hover {
+    background: var(--submenu-background-selected-hover);
+}
+
+
+.property_furniture>div>.menu>#items > #elements > div > img {
+    position: relative;
+    transform: translateY(20%);
+    top: 0;
+    width: 100%;
+    margin-top: 0.5em;
+    z-index: 1;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.543));
+    scale: 0.8;
+    transition: 0.1s;
+}
+
+.property_furniture>div>.menu>#items > #elements > div[data-id="edit"] > img {
+    filter: invert(1);
+    opacity: 0.4;
+    scale: 0.5;
+}
+
+.property_furniture>div>.menu>#items > #elements > div:not([data-id="edit"]):not([data-tag="theme"]):hover > img {
+    scale: 0.65;
+}
+
+.property_furniture>div>.menu>#items > #elements > div[data-tag="theme"] > img {
+    filter: none;
+    opacity: 0.4;
+    scale: 2.5;
+}
+
+
+.property_furniture>div>.menu>#items > #elements > div .label {
+    position: absolute;
+    width: 100%;
+    padding: 0.3em;
+    font-weight: 600;
+    font-size: 0.7em;
+    color: var(--primary-text-color);
+}
+
+.property_furniture>div>.menu>#items > #elements > div .label-second {
+    position: absolute;
+    bottom: 0;
+    padding: 0.3em;
+    font-weight: 600;
+    font-size: 0.75em;
+    background: linear-gradient(0deg, rgb(29 22 43), rgba(0, 0, 0, 0));
+    height: 3em;
+    width: 100%;
+    border-bottom-right-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    z-index: 30;
+    color: var(--secondary-text-color);
+}
+
+.property_furniture>div>.menu>#items > #elements > div .label-second > i {
+    margin-bottom: 0.2em;
+    margin-right: 0.1em;
+    opacity: 0.3;
+    transition: 0.2s;
+}
+
+.property_furniture>div>.menu>#items > #elements > div .label-second > i:hover {
+    opacity: 1.0;
+    scale: 1.1;
+}
+
+.property_furniture>div>.menu>#items > #elements > div .label-second > .id {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+
+.property_furniture_purchase > .purchase {
+    position: absolute;
+    
+    width: 40em;
+    height: 9em;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 1em;
+    
+    background: var(--menu-background);
+    color: white;
+    border-radius: 0.9em;
+    overflow: hidden;
+}
+
+.property_furniture_purchase > .purchase::before {
+    transform: translate(-50%, -50%);
+    top: 0em;
+    left: 0em;
+    z-index: -53;
+}
+
+.property_furniture_purchase > .purchase::after {
+    transform: translate(50%, 50%);
+    bottom: 0em;
+    right: 0em;
+    z-index: -53;
+}
+
+.property_furniture_purchase > .purchase > .name {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-top: 0.8em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.property_furniture_purchase > .purchase > .buttons {
+    display: flex;
+    gap: 1em;
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    width: fit-content;
+}
+
+.property_furniture_purchase > .purchase > .buttons > #purchase {
+    background: var(--main-color);
+    width: fit-content;
+    border: 2px solid var(--main-color);
+    padding: 0.4em 1.0em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.property_furniture_purchase > .purchase > .buttons > #purchase:hover {
+    background: var(--main-color-hover);
+    border-color: var(--main-color-hover);
+}
+
+.property_furniture_purchase > .purchase > .buttons > #purchase:active {
+    background: var(--main-color-active);
+    border-color: var(--main-color-active);
+}
+
+.property_furniture_purchase > .purchase > .buttons > #cancel {
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.549);
+    padding: 0.4em 0.8em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.property_furniture_purchase > .purchase > .buttons > #cancel:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.property_furniture_purchase > .purchase > .buttons > #cancel:active {
+    border-color: rgba(255, 255, 255, 0.95);
+}
+
+
+.property_furniture_purchase > .purchase > .buttons > #purchase > i,
+.property_furniture_purchase > .purchase > .buttons > #cancel > i {
+    margin-right: 0.4em;
+}
+
+.property_furniture_purchase > .purchase > .buttons > #purchase > span,
+.property_furniture_purchase > .purchase > .buttons > #cancel > span {
+    font-weight: 600;
+}
+
+
+.controls-menu > .controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: top left;
+    padding: 1em;
+    width: 14.5em;
+    right: 0;
+    margin-right: 2em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: 0.5em;
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+    opacity: 0.95;
+}
+
+.controls-menu > .controls > div {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    justify-content: space-between;
+}
+
+.controls-menu > .controls > div > span.key {
+    background: rgb(26 26 26);
+    border: 1px solid #ffffff2b;
+    padding: 6px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 10px;
+    margin-right: 10px;
+    text-align: center;
+    display: inline-block;
+    color: #ddd;
+    text-transform: uppercase;
+    padding-inline: 1em;
+}
+
+.controls-menu > .controls > div > span.hint {
+    margin-left: 0.3em;
+    opacity: 0.6;
+    font-size: 9px;
+}
+
+.controls-menu > .controls > div.label {
+    font-size: 1.2em;
+    font-weight: 700;
+    opacity: 0.95;
+    padding: 0px 5px 10px;
+}
+
+.controls-menu > .controls hr {
+    margin-block: 0.1em;
+}

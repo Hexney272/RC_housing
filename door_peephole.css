@@ -1,0 +1,18 @@
+.door_peephole {
+    display: none;
+}
+
+.door_peephole {
+    position: absolute;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    background: black;
+
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent 40%, black 45%);
+    mask-image: radial-gradient(circle at 50% 50%, transparent 40%, black 45%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+}

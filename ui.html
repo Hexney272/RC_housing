@@ -1,0 +1,2362 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href="nui://vms_cityhall/html/css/shared.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/safe.css" rel="stylesheet">
+    <link href="css/housing_creator.css" rel="stylesheet">
+    <link href="css/property_manage.css" rel="stylesheet">
+    <link href="css/property_offer.css" rel="stylesheet">
+    <link href="css/property_furniture.css" rel="stylesheet">
+    <link href="css/marketplace.css" rel="stylesheet">
+    <link href="css/contract.css" rel="stylesheet">
+    <link href="css/door_peephole.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.7/animations/scale-extreme.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/ocr-a-bt" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body id="body">
+    <div class="contract">
+        <div>
+            <div class="card">
+                <div id="date">
+                    <div></div>
+                    <p></p>
+                </div>
+                <div class="center" id="title"></div>
+                <div class="buttons">
+                    <div data-type="rent"></div>
+                    <div data-type="purchase"></div>
+                </div>
+                <hr>
+                <div>
+                    <div class="paragraph_1"></div>
+                    <div class="paragraph_text_1"></div>
+                    <div class="paragraph_2"></div>
+                    <div class="paragraph_text_2"></div>
+                    <div class="paragraph_3"></div>
+                    <div class="paragraph_text_3"></div>
+                </div>
+                <div class="signatures">
+                    <div class="seller">
+                        <div class="signature" id="signature_seller"></div>
+                        <div id="make_signature_seller"></div>
+                        <div class="dots">.........................</div>
+                        <div class="signature-text"></div>
+                    </div>
+                    <div class="buyer">
+                        <div class="signature" id="signature_buyer"></div>
+                        <div id="make_signature_buyer"></div>
+                        <div class="dots">.........................</div>
+                        <div class="signature-text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card_second"></div>
+        </div>
+    </div>
+    
+    <div class="property_offer">
+        <div>
+            <div class="menu">
+                <div class="main">
+                    <div class="title">
+                        <div class="house-name">
+                            <i class="fa-solid fa-house"></i>
+                            <span></span>
+                        </div>
+                        <span class="house-address">
+                            <i class="fa-solid fa-road"></i>
+                            <span></span>
+                        </span>
+                    </div>
+                    <hr>
+                    <div class="apartments-actions"></div>
+                    <div class="apartments-list"></div>
+                    <div class="description">
+                        <span></span>
+                        <hr>
+                    </div>
+                    <div class="informations">
+                        <div class="house-region">
+                            <div><i class="fa-solid fa-location-dot"></i> <span></span></div>
+                            <span></span>
+                        </div>
+                        <div class="house-area">
+                            <div><i class="fa-solid fa-chart-area"></i> <span></span></div>
+                            <span></span>
+                        </div>
+                        <div class="house-rooms">
+                            <div><i class="fa-solid fa-cubes"></i> <span></span></div>
+                            <span></span>
+                        </div>
+                        <div class="house-garage">
+                            <div><i class="fa-solid fa-warehouse"></i> <span></span></div>
+                            <span></span>
+                        </div>
+                        <div class="house-parking-spaces">
+                            <div><i class="fa-solid fa-warehouse"></i> <span></span></div>
+                            <span></span>
+                        </div>
+                        <div class="house-purchase-price">
+                            <div><i class="fa-solid fa-dollar-sign"></i> <span></span></div>
+                            <span></span>
+                        </div>
+                        <div class="house-rent-price">
+                            <div><i class="fa-solid fa-dollar-sign"></i> <span></span></div>
+                            <span></span>
+                        </div>
+                        <div class="house-electricity-bill">
+                            <div><i class="fa-solid fa-plug-circle-bolt"></i> <span></span></div>
+                            <span></span>
+                        </div>
+                        <div class="house-internet-bill">
+                            <div><i class="fa-solid fa-wifi"></i> <span></span></div>
+                            <span></span>
+                        </div>
+                        <div class="house-water-bill">
+                            <div><i class="fa-solid fa-shower"></i> <span></span></div>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <div class="change_theme" style="display:none"></div>
+                        <div class="view"></div>
+                        <div class="finalize"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme_selection">
+                <div class="main"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="property_furniture_purchase">
+        <div class="purchase">
+            <div class="name"></div>
+            <div class="informations"></div>
+            <div class="buttons">
+                <div id="purchase" data-payment="cash">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span></span>
+                </div>
+                <div id="purchase" data-payment="bank">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span></span>
+                </div>
+                <div id="cancel">
+                    <i class="fa-solid fa-xmark"></i>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls-menu">
+        <div class="label"></div>
+        <div class="controls"></div>
+    </div>
+
+    <div class="property_furniture">
+        <div>
+            <div class="menu">
+                <div id="categories">
+                    <span class="title"> <span></span> <div class="separator"></div></span>
+                    <div id="elements"></div>
+                </div>
+    
+                <div id="items">
+                    <span class="title"><span></span> <div class="separator"></div></span>
+                    <div id="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input>
+                    </div>
+                    <div id="elements"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="safe">
+        <div>
+            <div class="alert">
+                <div></div>
+            </div>
+            <div class="safe-actions">
+                <div id="changePinBtn"></div>
+            </div>
+            <div class="buttons">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>C</div>
+                <div>0</div>
+                <div>E</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="housing_manage">
+        <div>
+            <div class="menu">
+                <div id="modal">
+                    <div>
+                        <div id="header">
+                            <div id="title"></div>
+                            <div id="close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div id="description"></div>
+                        <div id="description-actions"></div>
+                        <hr>
+                        <div id="buttons"></div>
+                    </div>
+                </div>
+                
+                <div id="order-furniture-menu">
+                    <div>
+                        <div class="header"></div>
+                        <div class="data">
+                            <div class="image"></div>
+                            <div class="informations"></div>
+                        </div>
+                        <div class="buttons"></div>
+                    </div>
+                </div>
+
+                <ul class="side-bar"></ul>
+
+                <div class="main">
+                    <div data-type="my-house">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="options">
+                                        <div class="informations"></div>
+                                        
+                                        <div class="renter">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-building-user"></i>
+                                            </div>
+                                            <div class="informations">
+                                                <div class="label"></div>
+                                                <div class="value"></div>
+                                                <div class="clickable-btn button" data-action="rental-details"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="alerts"></div>
+                                    </div>
+                                    <i class="fa-solid fa-house"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="orders-list">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="furniture-list">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th id="status"></th>
+                                                    <th id="furniture"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <i class="fa-solid fa-truck"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="order-furniture">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="furniture-info">
+                                        <div class="your-orders">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-truck"></i>
+                                            </div>
+                                            <div class="informations">
+                                                <div class="label"></div>
+                                                <div class="value"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="furniture-filters">
+                                        <div id="search">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                            <input>
+                                        </div>
+                                        <select name="furniture-tag"></select>
+                                        <select name="furniture-environment"></select>
+                                    </div>
+                                    <div class="furniture-list"></div>
+                                    <i class="fa-solid fa-truck-ramp-box"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="bills">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="bills-info"></div>
+                                    <div class="bills-list">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th id="bills_status"></th>
+                                                    <th id="bills_period"></th>
+                                                    <th id="bills_type"></th>
+                                                    <th id="actions"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <i class="fa-solid fa-file-invoice"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="keys">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="keys-info"></div>
+                                    <div class="keys-list">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th id="keys_identifier"></th>
+                                                    <th id="actions"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <i class="fa-solid fa-key"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="permissions">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="permissions-players"></div>
+                                    <i class="fa-solid fa-user-shield"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="furniture">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="furniture-info"></div>
+                                    <div class="furniture-list">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th id="furniture_environment"></th>
+                                                    <th id="furniture_name"></th>
+                                                    <th id="actions"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <i class="fa-solid fa-chair"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="upgrades">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="options"></div>
+                                    <i class="fa-solid fa-turn-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="marketplace">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="options"></div>
+                                    <div class="buttons"></div>
+                                    <i class="fa-solid fa-shop"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="housing_creator">
+        <div>
+            <div class="menu">
+                <div id="register-new-furniture">
+                    <div>
+                        <div class="header"></div>
+                        <div class="description">
+                            <div class="checkbox-wrapper-46">
+                                <input type="checkbox" id="check-existing-furniture" class="inp-cbx" data-toggle="check-existing-furniture"/>
+                                <label for="check-existing-furniture" class="cbx">
+                                    <span>
+                                        <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg>
+                                    </span>
+                                    <label for="check-existing-furniture" class="input-name"></label>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="data">
+                            <input name="props-list">
+                        </div>
+                        
+                        <div class="buttons">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="side-bar">
+                    <span id="general"><span></span> <div class="separator"></div></span>
+                    <li class="element" data-href="new">
+                        <i class="fa-solid fa-house-chimney-medical"></i>
+                        <p class="label"></p>
+                    </li>
+                    <li class="element" data-href="all-properties">
+                        <i class="fa-solid fa-house"></i>
+                        <p class="label"></p>
+                    </li>
+                    <li class="element" data-href="all-furniture">
+                        <i class="fa-solid fa-chair"></i>
+                        <p class="label"></p>
+                    </li>
+                </ul>
+
+                <div class="main">
+                    <div data-type="new">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box" data-type="housing_type">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div id="housing_types">
+                                        <div data-housing-type="shell">
+                                            <p></p>
+                                            <span></span>
+                                            <img src="./images/shell.png">
+                                        </div>
+
+                                        <div data-housing-type="ipl">
+                                            <p></p>
+                                            <span></span>
+                                            <img src="./images/ipl.png">
+                                        </div>
+
+                                        <div data-housing-type="mlo">
+                                            <p></p>
+                                            <span></span>
+                                            <img src="./images/mlo.png">
+                                        </div>
+                                        
+                                        <div data-housing-type="building">
+                                            <p></p>
+                                            <span></span>
+                                            <img src="./images/building.png">
+                                        </div>
+
+                                        <div data-housing-type="motel">
+                                            <p></p>
+                                            <span></span>
+                                            <img src="./images/motel.png">
+                                        </div>
+                                    </div>
+
+                                    <!-- <i class="fa-solid fa-bullhorn"></i> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="new-shell">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                            <div class="tags">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div id="shells-list"></div>
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="new-ipl">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                            <div class="tags">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div id="ipls-list"></div>
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="configuration-shell">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                        </div>
+                                        <div class="buttons">
+                                            <div class="button save"></div>
+                                            <div class="button delete"></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="options">
+                                        <div>
+                                            <div class="shell-building">
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-building" class="inp-cbx" data-toggle="shell-building"/>
+                                                        <label for="shell-building" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-building" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <select></select>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="shell-motel">
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-motel" class="inp-cbx" data-toggle="shell-motel"/>
+                                                        <label for="shell-motel" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-motel" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <select></select>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="shell-address" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="shell-address" disabled/>
+                                                    <div class="button" data-button-action="shell-address">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="shell-region" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-signs-post"></i>
+                                                    <input class="full-input" type="text" name="shell-region" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="shell-house_name" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-file-signature"></i>
+                                                    <input class="full-input" type="text" name="shell-house_name"/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="shell-house_description" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-file-signature"></i>
+                                                    <textarea class="full-input" type="text" name="shell-house_description"></textarea>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-purchase_price" class="inp-cbx" data-toggle="shell-purchase_price"/>
+                                                        <label for="shell-purchase_price" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-purchase_price" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-dollar-sign"></i>
+                                                    <input type="text" name="shell-purchase_price" class="full-input formatted-number" pattern="\d*" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-rent_price" class="inp-cbx" data-toggle="shell-rent_price"/>
+                                                        <label for="shell-rent_price" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-rent_price" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-dollar-sign"></i>
+                                                    <input type="text" name="shell-rent_price" class="full-input formatted-number" pattern="\d*" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                <label for="shell-name" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-cube"></i>
+                                                    <input type="text" name="shell-name" disabled/>
+                                                    <div class="button" data-button-action="shell-name">
+                                                        <i class="fa-solid fa-location-crosshairs"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="shell-yard_zone" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="shell-yard_zone" disabled/>
+                                                    <div class="button" data-button-action="shell-yard_zone">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="shell-enter_point" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-door-open"></i>
+                                                    <input type="text" name="shell-enter_point" disabled/>
+                                                    <div class="button" data-button-action="shell-enter_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="shell-exit_point" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-person"></i>
+                                                    <input type="text" name="shell-exit_point" disabled/>
+                                                    <div class="button" data-button-action="shell-exit_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="checkbox-wrapper-46">
+                                                <input type="checkbox" id="shell-emergency_exit" class="inp-cbx" data-toggle="shell-emergency_exit"/>
+                                                <label for="shell-emergency_exit" class="cbx">
+                                                    <span>
+                                                        <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                        </svg>
+                                                    </span>
+                                                    <label for="shell-emergency_exit" class="input-name"></label>
+                                                </label>
+                                            </div>
+                                            <div class="multi-options" style="margin-top: -0.4em;">
+                                                <div>
+                                                    <div class="mt-2">
+                                                        <i class="fa-solid fa-person-shelter"></i>
+                                                        <input type="text" name="shell-emergency_exit_outside" disabled style="width: 8em;">
+                                                        <div class="button" data-button-action="shell-emergency_exit_outside">
+                                                            <i class="fa-solid fa-location-dot"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="mt-2">
+                                                        <i class="fa-solid fa-person-through-window"></i>
+                                                        <input type="text" name="shell-emergency_exit_inside" disabled style="width: 8em;">
+                                                        <div class="button" data-button-action="shell-emergency_exit_inside">
+                                                            <i class="fa-solid fa-location-dot"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div style="display: flex;gap: 1.5em;">
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-__garage" class="inp-cbx" data-toggle="shell-__garage"/>
+                                                        <label for="shell-__garage" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-__garage" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="checkbox-wrapper-46 parking-checkbox">
+                                                        <input type="checkbox" id="shell-__parking" class="inp-cbx" data-toggle="shell-__parking"/>
+                                                        <label for="shell-__parking" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-__parking" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-car-side"></i>
+                                                    <input type="text" name="shell-garage_point" disabled/>
+                                                    <div class="button" data-button-action="shell-garage_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="shell-delivery">
+                                                <div style="display: flex;gap: 1.5em;">
+                                                    <label for="shell-delivery" class="input-name"></label>
+
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-delivery_inside" class="inp-cbx" data-toggle="shell-delivery_inside"/>
+                                                        <label for="shell-delivery_inside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-delivery_inside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-delivery_outside" class="inp-cbx" data-toggle="shell-delivery_outside"/>
+                                                        <label for="shell-delivery_outside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-delivery_outside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-box-open"></i>
+                                                    <input type="text" name="shell-delivery_coordinates" disabled/>
+                                                    <div class="button" data-button-action="shell-delivery_coordinates">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <div style="display: flex;gap: 1.5em;">
+                                                    <label for="shell-furniture_environment" class="input-name"></label>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-furniture_environment_inside" class="inp-cbx" data-toggle="shell-furniture_environment_inside"/>
+                                                        <label for="shell-furniture_environment_inside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-furniture_environment_inside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-furniture_environment_outside" class="inp-cbx" data-toggle="shell-furniture_environment_outside"/>
+                                                        <label for="shell-furniture_environment_outside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-furniture_environment_outside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-wardrobe" class="inp-cbx" data-toggle="shell-wardrobe"/>
+                                                        <label for="shell-wardrobe" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-wardrobe" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-shirt"></i>
+                                                    <input type="text" name="shell-wardrobe_point" disabled/>
+                                                    <div class="button" data-button-action="shell-wardrobe_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="shell-storage">
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="shell-storage" class="inp-cbx" data-toggle="shell-storage"/>
+                                                        <label for="shell-storage" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="shell-storage" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-boxes-stacked"></i>
+                                                    <input type="text" name="shell-storage_point" disabled/>
+                                                    <div class="button" data-button-action="shell-storage_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="metadata-elements">
+                                                    <input name="metadata-slots-key" type="text" value="slots" disabled>
+                                                    <input name="metadata-slots-value" type="number" value="40" disabled>
+                                                    <input name="metadata-weight-key" type="text" value="weight" disabled>
+                                                    <input name="metadata-weight-value" type="number" value="30000" disabled>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="multi-options">
+                                                <div>
+                                                    <div>
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="shell-keys_limit" class="inp-cbx" data-toggle="shell-keys_limit">
+                                                            <label for="shell-keys_limit" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="shell-keys_limit" class="input-name">Keys Limit</label>
+                                                            </label>
+                                                        </div>  
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="fa-solid fa-key"></i>
+                                                        <input type="number" name="shell-keys_limit_count" class="full-input" disabled="" onkeydown="return isNumberKey(event)" onpaste="return false">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="shell-permissions_limit" class="inp-cbx" data-toggle="shell-permissions_limit">
+                                                            <label for="shell-permissions_limit" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="shell-permissions_limit" class="input-name">Permissions Limit</label>
+                                                            </label>
+                                                        </div>  
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="fa-solid fa-users"></i>
+                                                        <input type="number" class="full-input" name="shell-permissions_limit_count" disabled="" onkeydown="return isNumberKey(event)" onpaste="return false">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="shell-parking_space">
+                                                <label for="shell-parking_space" class="input-name"></label>
+                                                <div class="parking-floors"></div>
+                                                <div class="parking-spaces"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="configuration-ipl">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                        </div>
+                                        <div class="buttons">
+                                            <div class="button save"></div>
+                                            <div class="button delete"></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="options">
+                                        <div>
+                                            <div class="ipl-building">
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-building" class="inp-cbx" data-toggle="ipl-building"/>
+                                                        <label for="ipl-building" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-building" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <select></select>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="ipl-motel">
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-motel" class="inp-cbx" data-toggle="ipl-motel"/>
+                                                        <label for="ipl-motel" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-motel" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <select></select>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="ipl-address" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="ipl-address" disabled/>
+                                                    <div class="button" data-button-action="ipl-address">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="ipl-region" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-signs-post"></i>
+                                                    <input class="full-input" type="text" name="ipl-region" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="ipl-house_name" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-file-signature"></i>
+                                                    <input class="full-input" type="text" name="ipl-house_name"/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="ipl-house_description" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-file-signature"></i>
+                                                    <textarea class="full-input" type="text" name="ipl-house_description"></textarea>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-purchase_price" class="inp-cbx" data-toggle="ipl-purchase_price"/>
+                                                        <label for="ipl-purchase_price" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-purchase_price" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-dollar-sign"></i>
+                                                    <input type="text" name="ipl-purchase_price" class="full-input formatted-number" pattern="\d*" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-rent_price" class="inp-cbx" data-toggle="ipl-rent_price"/>
+                                                        <label for="ipl-rent_price" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-rent_price" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-dollar-sign"></i>
+                                                    <input type="text" name="ipl-rent_price" class="full-input formatted-number" pattern="\d*" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                <label for="ipl-name" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-cube"></i>
+                                                    <input type="text" name="ipl-name" disabled/>
+                                                    <div class="button" data-button-action="ipl-name">
+                                                        <i class="fa-solid fa-location-crosshairs"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="ipl-theme">
+                                                <label for="ipl-theme" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <select></select>
+                                                </div>
+
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-__theme_purchase_change" class="inp-cbx" data-toggle="ipl-__theme_purchase_change"/>
+                                                        <label for="ipl-__theme_purchase_change" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-__theme_purchase_change" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-__theme_purchased_change" class="inp-cbx" data-toggle="ipl-__theme_purchased_change"/>
+                                                        <label for="ipl-__theme_purchased_change" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-__theme_purchased_change" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="ipl-yard_zone" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="ipl-yard_zone" disabled/>
+                                                    <div class="button" data-button-action="ipl-yard_zone">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="ipl-enter_point" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-door-open"></i>
+                                                    <input type="text" name="ipl-enter_point" disabled/>
+                                                    <div class="button" data-button-action="ipl-enter_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="ipl-exit_point" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-person"></i>
+                                                    <input type="text" name="ipl-exit_point" disabled/>
+                                                    <div class="button" data-button-action="ipl-exit_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="checkbox-wrapper-46">
+                                                <input type="checkbox" id="ipl-emergency_exit" class="inp-cbx" data-toggle="ipl-emergency_exit"/>
+                                                <label for="ipl-emergency_exit" class="cbx">
+                                                    <span>
+                                                        <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                        </svg>
+                                                    </span>
+                                                    <label for="ipl-emergency_exit" class="input-name"></label>
+                                                </label>
+                                            </div>
+                                            <div class="multi-options" style="margin-top: -0.4em;">
+                                                <div>
+                                                    <div class="mt-2">
+                                                        <i class="fa-solid fa-person-shelter"></i>
+                                                        <input type="text" name="ipl-emergency_exit_outside" disabled style="width: 8em;">
+                                                        <div class="button" data-button-action="ipl-emergency_exit_outside">
+                                                            <i class="fa-solid fa-location-dot"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="mt-2">
+                                                        <i class="fa-solid fa-person-through-window"></i>
+                                                        <input type="text" name="ipl-emergency_exit_inside" disabled style="width: 8em;">
+                                                        <div class="button" data-button-action="ipl-emergency_exit_inside">
+                                                            <i class="fa-solid fa-location-dot"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ipl-delivery">
+                                                <div style="display: flex;gap: 1.5em;">
+                                                    <label for="ipl-delivery" class="input-name"></label>
+
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-delivery_inside" class="inp-cbx" data-toggle="ipl-delivery_inside"/>
+                                                        <label for="ipl-delivery_inside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-delivery_inside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-delivery_outside" class="inp-cbx" data-toggle="ipl-delivery_outside"/>
+                                                        <label for="ipl-delivery_outside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-delivery_outside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-box-open"></i>
+                                                    <input type="text" name="ipl-delivery_coordinates" disabled/>
+                                                    <div class="button" data-button-action="ipl-delivery_coordinates">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <div style="display: flex;gap: 1.5em;">
+                                                    <label for="ipl-furniture_environment" class="input-name"></label>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-furniture_environment_inside" class="inp-cbx" data-toggle="ipl-furniture_environment_inside"/>
+                                                        <label for="ipl-furniture_environment_inside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-furniture_environment_inside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-furniture_environment_outside" class="inp-cbx" data-toggle="ipl-furniture_environment_outside"/>
+                                                        <label for="ipl-furniture_environment_outside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-furniture_environment_outside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                <div style="display: flex;gap: 1.5em;">
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-__garage" class="inp-cbx" data-toggle="ipl-__garage"/>
+                                                        <label for="ipl-__garage" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-__garage" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="checkbox-wrapper-46 parking-checkbox">
+                                                        <input type="checkbox" id="ipl-__parking" class="inp-cbx" data-toggle="ipl-__parking"/>
+                                                        <label for="ipl-__parking" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-__parking" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-car-side"></i>
+                                                    <input type="text" name="ipl-garage_point" disabled/>
+                                                    <div class="button" data-button-action="ipl-garage_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-wardrobe" class="inp-cbx" data-toggle="ipl-wardrobe"/>
+                                                        <label for="ipl-wardrobe" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-wardrobe" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-shirt"></i>
+                                                    <input type="text" name="ipl-wardrobe_point" disabled/>
+                                                    <div class="button" data-button-action="ipl-wardrobe_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="ipl-storage">
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="ipl-storage" class="inp-cbx" data-toggle="ipl-storage"/>
+                                                        <label for="ipl-storage" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="ipl-storage" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-boxes-stacked"></i>
+                                                    <input type="text" name="ipl-storage_point" disabled/>
+                                                    <div class="button" data-button-action="ipl-storage_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="metadata-elements">
+                                                    <input name="metadata-slots-key" type="text" value="slots" disabled>
+                                                    <input name="metadata-slots-value" type="number" value="40" disabled>
+                                                    <input name="metadata-weight-key" type="text" value="weight" disabled>
+                                                    <input name="metadata-weight-value" type="number" value="30000" disabled>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="multi-options">
+                                                <div>
+                                                    <div>
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="ipl-keys_limit" class="inp-cbx" data-toggle="ipl-keys_limit">
+                                                            <label for="ipl-keys_limit" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="ipl-keys_limit" class="input-name">Keys Limit</label>
+                                                            </label>
+                                                        </div>  
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="fa-solid fa-key"></i>
+                                                        <input type="number" name="ipl-keys_limit_count" class="full-input" disabled="" onkeydown="return isNumberKey(event)" onpaste="return false">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="ipl-permissions_limit" class="inp-cbx" data-toggle="ipl-permissions_limit">
+                                                            <label for="ipl-permissions_limit" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="ipl-permissions_limit" class="input-name">Permissions Limit</label>
+                                                            </label>
+                                                        </div>  
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="fa-solid fa-users"></i>
+                                                        <input type="number" class="full-input" name="ipl-permissions_limit_count" disabled="" onkeydown="return isNumberKey(event)" onpaste="return false">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ipl-parking_space">
+                                                <label for="ipl-parking_space" class="input-name"></label>
+                                                <div class="parking-floors"></div>
+                                                <div class="parking-spaces"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="configuration-mlo">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                        </div>
+                                        <div class="buttons">
+                                            <div class="button save"></div>
+                                            <div class="button delete"></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="options">
+                                        <div>
+                                            <div class="mlo-motel">
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="mlo-motel" class="inp-cbx" data-toggle="mlo-motel"/>
+                                                        <label for="mlo-motel" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-motel" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <select></select>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="mlo-address" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="mlo-address" disabled/>
+                                                    <div class="button" data-button-action="mlo-address">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="mlo-region" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-signs-post"></i>
+                                                    <input class="full-input" type="text" name="mlo-region" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="mlo-house_name" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-file-signature"></i>
+                                                    <input class="full-input" type="text" name="mlo-house_name"/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="mlo-house_description" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-file-signature"></i>
+                                                    <textarea class="full-input" type="text" name="mlo-house_description"></textarea>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="mlo-purchase_price" class="inp-cbx" data-toggle="mlo-purchase_price"/>
+                                                        <label for="mlo-purchase_price" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-purchase_price" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-dollar-sign"></i>
+                                                    <input type="text" name="mlo-purchase_price" class="full-input formatted-number" pattern="\d*" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="mlo-rent_price" class="inp-cbx" data-toggle="mlo-rent_price"/>
+                                                        <label for="mlo-rent_price" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-rent_price" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-dollar-sign"></i>
+                                                    <input type="text" name="mlo-rent_price" class="full-input formatted-number" pattern="\d*" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                <label for="mlo-yard_zone" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="mlo-yard_zone" disabled/>
+                                                    <div class="button" data-button-action="mlo-yard_zone">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="mlo-interior_zone" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-house"></i>
+                                                    <input type="text" name="mlo-interior_zone" disabled/>
+                                                    <div class="button" data-button-action="mlo-interior_zone">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="mlo-menu_point" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-bars"></i>
+                                                    <input type="text" name="mlo-menu_point" disabled/>
+                                                    <div class="button" data-button-action="mlo-menu_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <div style="display: flex;gap: 1.5em;">
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="mlo-__garage" class="inp-cbx" data-toggle="mlo-__garage"/>
+                                                        <label for="mlo-__garage" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-__garage" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="checkbox-wrapper-46 parking-checkbox">
+                                                        <input type="checkbox" id="mlo-__parking" class="inp-cbx" data-toggle="mlo-__parking"/>
+                                                        <label for="mlo-__parking" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-__parking" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-car-side"></i>
+                                                    <input type="text" name="mlo-garage_point" disabled/>
+                                                    <div class="button" data-button-action="mlo-garage_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div class="mlo-delivery">
+                                                <div style="display: flex;gap: 1.5em;">
+                                                    <label for="mlo-delivery" class="input-name"></label>
+
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="mlo-delivery_inside" class="inp-cbx" data-toggle="mlo-delivery_inside"/>
+                                                        <label for="mlo-delivery_inside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-delivery_inside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="mlo-delivery_outside" class="inp-cbx" data-toggle="mlo-delivery_outside"/>
+                                                        <label for="mlo-delivery_outside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-delivery_outside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-box-open"></i>
+                                                    <input type="text" name="mlo-delivery_coordinates" disabled/>
+                                                    <div class="button" data-button-action="mlo-delivery_coordinates">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="mlo-doors">
+                                                <div style="display: flex;gap: 0.35em;">
+                                                    <label for="mlo-doors" class="input-name"></label>
+                                                    <div for="mlo-add_single_doors" class="button" data-button-action="mlo-add_single_doors">
+                                                        <label for="mlo-add_single_doors" class="input-name"></label>
+                                                    </div>
+                                                    <div for="mlo-add_double_doors"  class="button" data-button-action="mlo-add_double_doors">
+                                                        <label for="mlo-add_double_doors" class="input-name"></label>
+                                                    </div>
+                                                    <div for="mlo-add_slide_gate"  class="button" data-button-action="mlo-add_slide_gate">
+                                                        <label for="mlo-add_slide_gate" class="input-name"></label>
+                                                    </div>
+                                                </div>
+                                                <div class="doors-list"></div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <div style="display: flex;gap: 1.5em;">
+                                                    <label for="mlo-furniture_environment" class="input-name"></label>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="mlo-furniture_environment_inside" class="inp-cbx" data-toggle="mlo-furniture_environment_inside"/>
+                                                        <label for="mlo-furniture_environment_inside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-furniture_environment_inside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="mlo-furniture_environment_outside" class="inp-cbx" data-toggle="mlo-furniture_environment_outside"/>
+                                                        <label for="mlo-furniture_environment_outside" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-furniture_environment_outside" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="mlo-wardrobe" class="inp-cbx" data-toggle="mlo-wardrobe"/>
+                                                        <label for="mlo-wardrobe" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-wardrobe" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-shirt"></i>
+                                                    <input type="text" name="mlo-wardrobe_point" disabled/>
+                                                    <div class="button" data-button-action="mlo-wardrobe_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="mlo-storage">
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="mlo-storage" class="inp-cbx" data-toggle="mlo-storage"/>
+                                                        <label for="mlo-storage" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="mlo-storage" class="input-name"></label>
+                                                        </label>
+                                                    </div>  
+                                                </div>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-boxes-stacked"></i>
+                                                    <input type="text" name="mlo-storage_point" disabled/>
+                                                    <div class="button" data-button-action="mlo-storage_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="metadata-elements">
+                                                    <input name="metadata-slots-key" type="text" value="slots" disabled>
+                                                    <input name="metadata-slots-value" type="number" value="40" disabled>
+                                                    <input name="metadata-weight-key" type="text" value="weight" disabled>
+                                                    <input name="metadata-weight-value" type="number" value="30000" disabled>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="multi-options">
+                                                <div>
+                                                    <div>
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="mlo-keys_limit" class="inp-cbx" data-toggle="mlo-keys_limit">
+                                                            <label for="mlo-keys_limit" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="mlo-keys_limit" class="input-name">Keys Limit</label>
+                                                            </label>
+                                                        </div>  
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="fa-solid fa-key"></i>
+                                                        <input type="number" name="mlo-keys_limit_count" class="full-input" disabled="" onkeydown="return isNumberKey(event)" onpaste="return false">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="mlo-permissions_limit" class="inp-cbx" data-toggle="mlo-permissions_limit">
+                                                            <label for="mlo-permissions_limit" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="mlo-permissions_limit" class="input-name">Permissions Limit</label>
+                                                            </label>
+                                                        </div>  
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="fa-solid fa-users"></i>
+                                                        <input type="number" class="full-input" name="mlo-permissions_limit_count" disabled="" onkeydown="return isNumberKey(event)" onpaste="return false">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="configuration-building">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                        </div>
+                                        <div class="buttons">
+                                            <div class="button save"></div>
+                                            <div class="button delete"></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="options">
+                                        <div>
+                                            <div>
+                                                <label for="building-address" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="building-address" disabled/>
+                                                    <div class="button" data-button-action="building-address">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="building-region" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-signs-post"></i>
+                                                    <input class="full-input" type="text" name="building-region" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="building-name" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-file-signature"></i>
+                                                    <input class="full-input" type="text" name="building-name"/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                <label for="building-yard_zone" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="building-yard_zone" disabled/>
+                                                    <div class="button" data-button-action="building-yard_zone">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="building-enter_point" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-door-open"></i>
+                                                    <input type="text" name="building-enter_point" disabled/>
+                                                    <div class="button" data-button-action="building-enter_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="building-exit_point" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-person"></i>
+                                                    <input type="text" name="building-exit_point" disabled/>
+                                                    <div class="button" data-button-action="building-exit_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div class="underground_parking">
+                                                <div>
+                                                    <div class="checkbox-wrapper-46">
+                                                        <input type="checkbox" id="building-__underground_parking" class="inp-cbx" data-toggle="building-__underground_parking"/>
+                                                        <label for="building-__underground_parking" class="cbx">
+                                                            <span>
+                                                                <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <label for="building-__underground_parking" class="input-name"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-square-parking"></i>
+                                                    <input type="text" class="full-input" name="building-underground_parking_floors" disabled maxlength="2" onkeydown="return isNumberKey(event)" onpaste="return false"></input>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="enter_garage_point">
+                                                <label for="building-enter_garage_point" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="building-enter_garage_point" disabled/>
+                                                    <div class="button" data-button-action="building-enter_garage_point">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                        </div>
+                                        <!-- <div></div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="configuration-motel">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                        </div>
+                                        <div class="buttons">
+                                            <div class="button save"></div>
+                                            <div class="button delete"></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="options">
+                                        <div>
+                                            <div>
+                                                <label for="motel-address" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="motel-address" disabled/>
+                                                    <div class="button" data-button-action="motel-address">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="motel-region" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-signs-post"></i>
+                                                    <input class="full-input" type="text" name="motel-region" disabled/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="motel-name" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-file-signature"></i>
+                                                    <input class="full-input" type="text" name="motel-name"/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                <label for="motel-yard_zone" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <input type="text" name="motel-yard_zone" disabled/>
+                                                    <div class="button" data-button-action="motel-yard_zone">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+                                        </div>
+
+                                        <!-- <div></div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="configuration-furniture">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                        </div>
+                                        <div class="buttons">
+                                            <div class="button save"></div>
+                                            <div class="button delete"></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="options">
+                                        <div style="position:relative;width:45.2em;">
+                                            <div>
+                                                <img src="" class="furniture-image">
+                                                <p id="furniture-model-name"></p>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                <label for="furniture-label" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-tag"></i>
+                                                    <input type="text" name="furniture-label" class="full-input"/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <label for="furniture-price" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <i class="fa-solid fa-dollar-sign"></i>
+                                                    <input type="text" name="furniture-price" class="full-input"/>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div id="tags">
+                                                <label for="furniture-tag" class="input-name"></label>
+                                                <div class="mt-4"></div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <div>
+                                                    <label for="furniture-environment" class="input-name"></label>
+
+                                                    <div style="display: flex;gap: 1.5em;">
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="furniture-inside" class="inp-cbx" data-toggle="furniture-inside"/>
+                                                            <label for="furniture-inside" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="furniture-inside" class="input-name"></label>
+                                                            </label>
+                                                        </div>
+    
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="furniture-outside" class="inp-cbx" data-toggle="furniture-outside"/>
+                                                            <label for="furniture-outside" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="furniture-outside" class="input-name"></label>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div>
+                                                <div>
+                                                    <label for="furniture-delivery_size" class="input-name"></label>
+
+                                                    <div style="display: flex;gap: 1.5em;">
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="furniture-delivery_small" class="inp-cbx" data-toggle="furniture-delivery_small"/>
+                                                            <label for="furniture-delivery_small" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="furniture-delivery_small" class="input-name"></label>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="furniture-delivery_medium" class="inp-cbx" data-toggle="furniture-delivery_medium"/>
+                                                            <label for="furniture-delivery_medium" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="furniture-delivery_medium" class="input-name"></label>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox-wrapper-46">
+                                                            <input type="checkbox" id="furniture-delivery_big" class="inp-cbx" data-toggle="furniture-delivery_big"/>
+                                                            <label for="furniture-delivery_big" class="cbx">
+                                                                <span>
+                                                                    <svg viewBox="0 0 12 10" height="10px" width="12px">
+                                                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="furniture-delivery_big" class="input-name"></label>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div id="interactable-name">
+                                                <label for="furniture-interactable-name" class="input-name"></label>
+                                                <div class="mt-2">
+                                                    <select name="furniture-interactable-name"></select>
+                                                </div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                            <div class="metadata-list">
+                                                <label for="furniture-metadata" class="input-name"></label>
+                                                <div class="metadata-elements"></div>
+                                                <!-- <label class="input-description"></label> -->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="all-properties">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                        </div>
+                                        <div class="right-buttons">
+                                            <input class="search"/>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div id="properties-list">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th id="house_type"></th>
+                                                    <th id="house_name"></th>
+                                                    <th id="house_address"></th>
+                                                    <th id="house_owner"></th>
+                                                    <th id="house_renter"></th>
+                                                    <th id="actions"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                        
+                                        <div id="pagination">
+                                            <button id="prev-page"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <span id="page-info"></span>
+                                            <button id="next-page"><i class="fa-solid fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- <i class="fa-solid fa-bullhorn"></i> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="all-furniture">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="header"></div>
+                                            <div class="title"></div>
+                                        </div>
+                                        <div class="right-buttons">
+                                            <input class="search"/>
+                                            <div class="title button-create">+</div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div id="furniture-list">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th id="furniture_img"></th>
+                                                    <th id="furniture_label"></th>
+                                                    <th id="furniture_price"></th>
+                                                    <th id="furniture_model"></th>
+                                                    <th id="furniture_category"></th>
+                                                    <th id="furniture_interactable"></th>
+                                                    <th id="actions"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                        
+                                        <div id="pagination">
+                                            <button id="prev-page"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <span id="page-info"></span>
+                                            <button id="next-page"><i class="fa-solid fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- <i class="fa-solid fa-bullhorn"></i> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="marketplace">
+        <div>
+            <div class="menu">
+                <div class="main">
+                    <div data-type="offer">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="title"></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="big-image"></div>
+                                    <div class="options"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-type="list">
+                        <div>
+                            <div class="side-boxes">
+                                <div class="box">
+                                    <div class="text">
+                                        <div>
+                                            <div class="title">MARKETPLACE</div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="options"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <div class="door_peephole"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <!-- Tagify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.31.3/tagify.min.js" integrity="sha512-YrKVSda1sKH9vnfrtO2Dzkv1CHmsnQsPTIBv9IDdu7bqiHAvmTf02zxHv3t+d2hcIWTgJHi+6X6Oy21MVyWNwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.31.3/tagify.min.css" integrity="sha512-fg4mbaXioGkhZsVQlBUD7MmEA5zQY4I3aiawILa2nHXUk0e5gBZjlwGoJCeRIAVHqYOdaddDQA7HUXwqx3vVAA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tooltips -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <script src="../config/config.js" type="text/javascript"></script>
+    <script src="js/templates.js" type="text/javascript"></script>
+    <script src="js/loads.js" type="text/javascript"></script>
+    <script src="js/controls.js" type="text/javascript"></script>
+    <script src="js/housing_creator.js" type="text/javascript"></script>
+    <script src="js/furniture.js" type="text/javascript"></script>
+    <script src="js/property.js" type="text/javascript"></script>
+    <script src="js/marketplace.js" type="text/javascript"></script>
+    <script src="js/safe.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+    
+    <script src="nui://vms_cityhall/html/js/shared.js" type="text/javascript"></script>
+</body>
+
+</html>

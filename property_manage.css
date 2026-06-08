@@ -1,0 +1,1563 @@
+.housing_manage.blurred {
+    filter: blur(3px);
+    opacity: 0.8;
+}
+
+.housing_manage>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
+
+    width: 75em;
+    height: 56em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: 0.9em;
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.housing_manage>div::before,
+.housing_manage>div::after {
+    content: "";
+    position: absolute;
+    width: 70rem;
+    height: 50rem;
+    border-radius: 50%;
+    opacity: .1;
+    z-index: 1;
+    background: radial-gradient(var(--main-color) 10%, transparent 70%);
+}
+
+.housing_manage>div::before {
+    transform: translate(-50%, -50%);
+    top: 0rem;
+    left: 10em;
+}
+
+.housing_manage>div::after {
+    transform: translate(50%, 50%);
+    bottom: 0rem;
+    right: 10em;
+}
+
+.housing_manage>div>.menu {
+    position: relative;
+    display: grid;
+    grid-template-columns: 15em auto;
+    column-gap: 1em;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    z-index: 100;
+}
+
+.housing_creator>div>.menu>#register-new-furniture,
+.housing_manage>div>.menu>#order-furniture-menu {
+    display: none;
+    position: absolute;
+    background: #0e0e0e96;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+}
+
+.housing_creator>div>.menu>#register-new-furniture>div,
+.housing_manage>div>.menu>#order-furniture-menu>div {
+    width: 40em;
+    /* height: 30em; */
+    height: auto;
+    padding-bottom: 1em;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
+    background: var(--menu-background);
+    color: white;
+    border-radius: 0.9em;
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.housing_creator>div>.menu>#register-new-furniture>div>.header,
+.housing_manage>div>.menu>#order-furniture-menu>div>.header {
+    font-weight: 700;
+    font-size: 2em;
+    padding: 0.5em 0.5em 0em;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.data {
+    display: grid;
+    gap: 1em;
+    height: 20.5em;
+    grid-template-columns: 15em 22em;
+    margin-top: 1em;
+    padding-inline: 1em;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.data>.image {
+    background: var(--submenu-background-selected);
+    border-radius: 0.6em;
+    border: 1px solid #ffffff05;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.data>.image>img {
+    width: 100%;
+    scale: 0.75;
+    transform: translateY(25%) !important;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.data>.informations {
+    position: relative;
+    background: var(--submenu-background-selected);
+    border-radius: 0.6em;
+    padding: 1em;
+    overflow: overlay;
+    border: 1px solid #ffffff05;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.data>.informations>div {
+    border-radius: 0.35em;
+    padding: 0.25em;
+    margin-bottom: 0.7em;
+    text-align: center;
+    font-weight: 700;
+    background: var(--submenu-background-selected-hover);
+    color: var(--primary-text-color);
+    border: 1px solid #ffffff05;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.data>.informations>div.interactable-info {
+    margin-top: 0.7em;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.data>.informations>span {
+    display: block;
+    font-weight: 400;
+    color: var(--primary-text-color);
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.data>.informations>span>i {
+    margin-right: 0.3em;
+    color: var(--secondary-text-color);
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.data>.informations>span>span {
+    font-weight: 600;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.data>.informations>span.final-price {
+    position: absolute;
+    bottom: 0.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.buttons {
+    display: grid;
+    grid-template-columns: 15em 22em;
+    margin-top: 1em;
+    gap: 1em;
+    padding-inline: 1em;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.buttons>div {
+    background: var(--back-btn-color);
+    text-align: center;
+    font-weight: 600;
+    padding-block: 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.buttons>div:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.buttons>div[data-payment] {
+    background: var(--main-color);
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.buttons>div[data-payment]:hover {
+    background: var(--main-color-hover);
+}
+
+.housing_manage>div>.menu>#order-furniture-menu>div>.buttons>div[data-payment]:active {
+    background: var(--main-color-active);
+}
+
+
+.housing_manage>div>.menu>#modal {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0aa6;
+    z-index: 500;
+}
+
+.housing_manage>div>.menu>#modal>div {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
+    background: #2b2b34fc;
+    padding: 1.4em;
+    border-radius: 0.7rem;
+    box-shadow: 0px 0px 70px #000000b8;
+}
+
+.housing_manage>div>.menu>#modal>div>#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.housing_manage>div>.menu>#modal>div>#header>#title {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.housing_manage>div>.menu>#modal>div>#header>#close {
+    padding-inline: 1em;
+    opacity: 0.3;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.housing_manage>div>.menu>#modal>div>#header>#close:hover {
+    opacity: 0.75;
+}
+
+.housing_manage>div>.menu>#modal>div>#description {
+    letter-spacing: -0.08px;
+}
+
+
+.housing_manage>div>.menu>#modal>div>#description-actions input.full-width {
+    width: 100%;
+    height: 3em;
+    border-radius: 0.4em;
+    background: #ffffff1a;
+    border: 1px solid #ffffff14;
+    color: rgb(240, 240, 240);
+    padding: 1px 9px;
+    letter-spacing: 0.4px;
+}
+
+.housing_manage>div>.menu>#modal>div>#description-actions>span.select2 {
+    width: 100% !important;
+}
+
+.housing_manage>div>.menu>#modal>div>#description-actions>.checkbox-wrapper-46 {
+    margin-bottom: 0.5em;
+}
+
+
+.housing_manage>div>.menu>#modal>div>#description-actions>.info-panel {
+    background: #cdcdcd2e;
+    border: 1px solid #cdcdcd45;
+    border-radius: 0.6em;
+    margin-top: 1em;
+    padding: 0.4em 0.5em;
+}
+
+.housing_manage>div>.menu>#modal>div>#description-actions>.info-panel>.title {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    font-size: 1.06em;
+    font-weight: 700;
+    color: #ffffffdb;
+}
+
+.housing_manage>div>.menu>#modal>div>#description-actions>.info-panel>.description {
+    font-size: 0.85em;
+    color: #e1e1e1c7;
+}
+
+
+
+.housing_manage>div>.menu>#modal>div>#buttons {
+    display: flex;
+    gap: 1em;
+    text-align: center;
+    justify-content: end;
+    font-weight: 600;
+}
+
+.housing_manage>div>.menu>#modal>div>#buttons>div {
+    padding: 0.3rem 1rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.housing_manage>div>.menu>#modal>div>#buttons>#cancel {
+    background: var(--back-btn-color);
+}
+
+.housing_manage>div>.menu>#modal>div>#buttons>#cancel:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.housing_manage>div>.menu>#modal>div>#buttons>#accept {
+    background: var(--main-color);
+}
+
+.housing_manage>div>.menu>#modal>div>#buttons>#accept:hover {
+    background: var(--main-color-hover);
+}
+
+.housing_manage>div>.menu>#modal>div>#buttons>#accept:active {
+    background: var(--main-color-active);
+}
+
+
+.housing_manage .menu ul.side-bar {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 15px 0px;
+    gap: 5px;
+    padding-inline: 10px;
+    background: var(--submenu-background);
+    height: 54em;
+    overflow: hidden;
+}
+
+.housing_manage.isDevice .menu ul.side-bar {
+    opacity: 0.0 !important;
+}
+
+.housing_manage .menu ul.side-bar>span {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #c9c9c9c7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.housing_manage .menu ul.side-bar>span:first-child {
+    margin-top: 0 !important;
+}
+
+.housing_manage .menu ul.side-bar>span>.separator {
+    opacity: 0.5;
+    height: 2px;
+    background: #c9c9c9c7;
+    width: 100%;
+}
+
+.housing_manage .menu ul.side-bar>li {
+    display: flex;
+    align-items: center;
+    color: #7e8590;
+    height: 2.5em;
+    gap: 10px;
+    transition: all 0.3s ease-out;
+    padding: 4px 7px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.housing_manage .menu ul.side-bar>li.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.housing_manage .menu ul.side-bar>li:not(.disabled):hover {
+    background-color: var(--submenu-background-selected);
+    color: #ffffff;
+    transform: translate(1px, -1px);
+}
+
+.housing_manage .menu ul.side-bar>li:not(.disabled):active {
+    background-color: var(--main-color-hover);
+}
+
+.housing_manage .menu ul.side-bar>li:not(.disabled).selected {
+    background-color: var(--main-color) !important;
+    color: #ffffff;
+}
+
+.housing_manage .menu ul.side-bar>li[data-href='sell']:hover {
+    background-color: var(--close-color);
+}
+
+.housing_manage .menu ul.side-bar>li[data-href='sell']:active {
+    background-color: var(--close-color-hover);
+}
+
+.housing_manage .menu ul.side-bar>li svg {
+    width: 19px;
+    height: 19px;
+    transition: all 0.3s ease-out;
+}
+
+.housing_manage .menu ul.side-bar>li p {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.housing_manage.isDevice .menu>.main {
+    position: absolute !important;
+    left: 1em !important;
+    top: 1em !important;
+    width: 73em !important;
+}
+
+.housing_manage .menu>.main>div .text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.housing_manage div>div>.side-boxes>.box {
+    position: relative;
+    padding: 1em;
+    background: var(--submenu-background-selected);
+    overflow: hidden;
+    width: 100%;
+    height: 52em;
+}
+
+.housing_manage div>div>.side-boxes>.box>div {
+    position: relative;
+    z-index: 30;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options {
+    display: grid;
+    gap: 1em;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts {
+    max-height: 39em;
+    overflow: overlay;
+    border-radius: 0.4em;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--submenu-background-selected);
+    border: 1px solid #ffffff05;
+    overflow: hidden;
+    padding-block: 1em;
+    padding-inline: 1.5em;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div>i {
+    font-size: 2em;
+    color: var(--primary-text-color);
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div>.remove {
+    position: absolute;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2em;
+    right: 0.2em;
+    text-align: center;
+    line-height: 1.5;
+    opacity: 0.35;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div>.remove:hover {
+    opacity: 0.55;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div>.data {
+    line-height: 1.2;
+    padding-left: 1.2em;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div>.data>.label {
+    font-weight: 700;
+    font-size: 1.4em;
+    color: var(--primary-text-color);
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div>.data>.description {
+    font-weight: 400;
+    color: var(--secondary-text-color);
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.warn {
+    background: #ffb30026;
+    border: 1px solid #ffb3001c;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.warn>i {
+    color: #efa928;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.warn>div>.label {
+    color: #fffcf7e0;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.warn>div>.description {
+    color: #fffcf7;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.error {
+    background: #ff000026;
+    border: 1px solid #ff00001c;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.error>i {
+    color: #ef2828;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.error>div>.label {
+    color: #fff7f7e0;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.error>div>.description {
+    color: #fff7f7;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.info {
+    background: #00bbff26;
+    border: 1px solid #00bbff1c;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.info>i {
+    color: #2895ef;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.info>div>.label {
+    color: #f7fbffe0;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.alerts>div.info>div>.description {
+    color: #f7fbff;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.informations,
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info,
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>.create-new-permission {
+    display: block;
+    height: 8em;
+}
+
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>.create-new-permission>i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
+    font-size: 2em;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.informations>div,
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.renter,
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-info>div,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info>div,
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div {
+    position: relative;
+    background: var(--submenu-background-selected);
+    border: 1px solid #ffffff05;
+    overflow: hidden;
+    padding-block: 1em;
+    padding-inline: 1.5em;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5em;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.informations>div>.icon,
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.renter>.icon,
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.icon,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-info>div>.icon,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div>.icon,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info>div>.icon,
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.icon,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div>.icon,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div>.icon {
+    width: 3.5em;
+    min-width: 3.5em;
+    text-align: center;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.informations>div>.icon>i,
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.renter>.icon>i,
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.icon>i,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-info>div>.icon>i,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div>.icon>i,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info>div>.icon>i,
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.icon>i,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div>.icon>i,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div>.icon>i {
+    font-size: 2em;
+    margin-right: 0.5em;
+    color: var(--primary-text-color);
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.informations>div>.informations,
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.renter>.informations,
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-info>div>.informations,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div>.informations,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info>div>.informations,
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.informations,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div>.informations,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div>.informations {
+    line-height: 1.2;
+    width: 100%;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.informations>div>.informations>.label,
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.renter>.informations>.label,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-info>div>.informations>.label,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div>.informations>.label,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info>div>.informations>.label {
+    font-size: 0.95em;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.informations>div>.informations>.value,
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.renter>.informations>.value {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--primary-text-color);
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.renter>.informations>.button {
+    position: absolute;
+    width: fit-content;
+    right: 1em;
+    bottom: 1.3em;
+    background: var(--main-color);
+    padding: 0.3em 1em;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>tbody {
+    display: block;
+    max-height: 43em;
+    overflow: auto;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-radius: 0.3em;
+    height: 5em !important;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td .furniture-delivery-tag {
+    /* width: 8em; */
+    width: 15em;
+    padding-inline: 0.5em;
+    padding-block: 0.1em;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 100px;
+    border: 1px solid #ffffff05;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td .furniture-delivery-tag.status-1 {
+    color: #efefefcf;
+    background: #cdcdcd0d;
+    border-color: #cdcdcd24;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td .furniture-delivery-tag.status-2 {
+    color: #dfe9ffcf;
+    background: #9dbbff0d;
+    border-color: #9dbbff24;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td .furniture-delivery-tag.status-3 {
+    color: #ffefdfcf;
+    background: #ffd89d0d;
+    border-color: #ffd89d24;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td .furniture-delivery-tag.status-4 {
+    color: #fffadfcf;
+    background: #fff49d0d;
+    border-color: #fff49d24;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td .furniture-delivery-tag.status-5 {
+    color: #e1ffdfcf;
+    background: #baff9d0d;
+    border-color: #baff9d24;
+}
+
+
+
+
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-filters {
+    position: relative;
+    display: flex;
+    gap: 1em;
+    height: 3em;
+    margin-top: 1em;
+    background: var(--submenu-background-selected);
+    border: 1px solid #ffffff05;
+    overflow: hidden;
+    padding-block: 1em;
+    padding-inline: 1.5em;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5em;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-filters>#search {
+    position: relative;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-filters>#search>i {
+    position: absolute;
+    height: 100%;
+    width: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.4;
+    top: 0;
+    left: -0.2em;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-filters>#search>input {
+    background: var(--submenu-background-selected-hover) !important;
+    border: 1px solid rgba(255, 255, 255, 0.074) !important;
+    border-radius: 0.3em;
+    height: 1.9em;
+    padding-left: 2.2em;
+    padding-right: 1em;
+    width: 18em;
+    color: white;
+    outline: none;
+}
+
+
+.housing_manage span.select2 {
+    display: block !important;
+    width: 11em !important;
+    background: var(--submenu-background-selected-hover) !important;
+    border: 1px solid rgba(255, 255, 255, 0.074) !important;
+    border-radius: 0.3em;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin-top: 1em;
+    border-radius: 0.5em;
+    max-height: 40.2em;
+    overflow: overlay;
+}
+
+.housing_manage.isDevice div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div {
+    position: relative;
+    height: 18em;
+    background: var(--submenu-background-selected);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+    padding: 0.8em 1em;
+    border-radius: 0.5em;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>img {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    scale: 0.64;
+    margin-top: 0.8em;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(20%, -290%);
+    transform-origin: top left;
+    rotate: 45deg;
+    width: 10em;
+    text-align: center;
+    background: var(--main-color);
+    opacity: 0.75;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.name {
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--primary-text-color);
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.price {
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.button {
+    text-align: center;
+    position: absolute;
+    width: 15em;
+    left: 0;
+    bottom: 1em;
+    margin-inline: 1em;
+    padding-block: 0.3em;
+    background: var(--main-color);
+    border-radius: 0.3em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.renter>.informations>.button:hover,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.button:hover {
+    background: var(--main-color-hover);
+}
+
+.housing_manage div[data-type="my-house"]>div>.side-boxes>.box>.options>.renter>.informations>.button:active,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.button:active {
+    background: var(--main-color-active);
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 1em;
+    width: 100%;
+    left: 0;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.minus,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.plus {
+    position: relative;
+    height: 2.113em;
+    width: 2.113em;
+    text-align: center;
+    border-radius: 0.3em;
+    background: var(--submenu-background-selected-hover);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.value {
+    width: 6.3em;
+    text-align: center;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.minus>i,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.plus>i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
+    scale: 0.7;
+    opacity: 0.5;
+    transition: 0.2s;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.minus:hover,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.plus:hover {
+    background: #4c4e56b5;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.minus:hover>i,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.plus:hover>i {
+    opacity: 0.8;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.minus:active>i,
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-list>div>.quantity-manage>.plus:active>i {
+    opacity: 1.0;
+}
+
+
+
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-info {
+    display: grid;
+    gap: 1em;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-info>div {
+    background: var(--submenu-background-selected);
+    border: 1px solid #ffffff05;
+    overflow: hidden;
+    padding-block: 1em;
+    padding-inline: 1.5em;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5em;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-info>div>.icon>i {
+    font-size: 2em;
+    margin-right: 0.5em;
+    color: var(--primary-text-color);
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-info>div>.informations {
+    line-height: 1.2;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-info>div>.informations>.label {
+    font-size: 0.95em;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-info>div>.informations>.price {
+    font-weight: 600;
+    font-size: 1.5em;
+    color: var(--primary-text-color);
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-info>div>.informations>.price>span {
+    font-size: 0.75em;
+    color: var(--secondary-text-color);
+    margin-left: 0.3em;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>thead th#bills_status {
+    width: 11em;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody>tr>td:first-child {
+    width: 11em;
+}
+
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-info>div>.informations>.value,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div>.informations>.value,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info>div>.informations>.value,
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.informations>.label {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: var(--primary-text-color);
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div>.informations>.value>span,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info>div>.informations>.value>span {
+    font-size: 0.65em;
+    color: var(--secondary-text-color);
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div>.informations>.button,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info>div>.informations>.button {
+    font-weight: 600;
+    color: var(--primary-text-color);
+    background: var(--main-color);
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 1em;
+    text-align: center;
+    padding: 0.3em 1em;
+    border-radius: 0.3em;
+    width: 100%;
+    font-size: 1em;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div>.informations>.button:hover,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info>div>.informations>.button:hover,
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations>.button:hover,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div .button:hover {
+    background: var(--main-color-hover);
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div>.informations>.button:active,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-info>div>.informations>.button:active,
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations>.button:active,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div .button:active {
+    background: var(--main-color-active);
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table,
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-list>table {
+    margin-top: 1em;
+    border-collapse: collapse;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table {
+    border-collapse: collapse;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>thead,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>thead,
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>thead,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-list>table>thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-radius: 0.3em;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>thead th,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>thead th,
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>thead th,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-list>table>thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-list>table>tbody {
+    display: block;
+    max-height: 37em;
+    overflow: auto;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody {
+    display: block;
+    max-height: 41.3em;
+    overflow: auto;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr,
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody tr,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-list>table>tbody tr {
+    height: 3em;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-radius: 0.3em;
+}
+
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-list>table>thead tr th:last-child {
+    padding-right: 1em;
+}
+
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-list>table>thead tr th:last-child,
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-list>table>tbody tr td:last-child {
+    width: 6em;
+    text-align: center;
+}
+
+.housing_manage div[data-type="keys"]>div>.side-boxes>.box>.keys-list>table>tbody tr td:last-child>div {
+    text-align: center;
+    font-weight: 600;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>thead tr th:first-child,
+.housing_manage div[data-type="orders-list"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:first-child {
+    width: 17em;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>thead tr th:first-child,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:first-child {
+    width: 10em;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>thead tr th:last-child,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>thead tr th:last-child,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child {
+    text-align: center;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-info>div.your-orders,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div.ikea,
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>.create-new-permission {
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.housing_manage div[data-type="order-furniture"]>div>.side-boxes>.box>.furniture-info>div.your-orders:hover,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-info>div.ikea:hover,
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>.create-new-permission:hover {
+    background: var(--submenu-background-selected-hover);
+}
+
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.informations>.buttons {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    margin-top: 1em;
+}
+
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.informations>.buttons>.button {
+    font-weight: 600;
+    color: var(--primary-text-color);
+    background: var(--main-color);
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+    padding-block: 0.3em;
+    border-radius: 0.3em;
+    font-size: 1em;
+}
+
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.informations>.buttons>.button:hover {
+    background: var(--main-color-hover);
+}
+
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.informations>.buttons>.button:active {
+    background: var(--main-color-active);
+}
+
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.informations>.buttons>.button[data-action="remove-permission"] {
+    background: var(--close-color);
+}
+
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.informations>.buttons>.button[data-action="remove-permission"]:hover {
+    background: var(--close-color-hover);
+}
+
+.housing_manage div[data-type="permissions"]>div>.side-boxes>.box>.permissions-players>div>.informations>.buttons>.button[data-action="remove-permission"]:active {
+    background: var(--close-color-active);
+}
+
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody tr td:last-child,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child {
+    display: flex;
+    gap: 0.5em;
+    width: fit-content;
+    margin-inline: auto;
+    align-items: center;
+    height: inherit;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody tr td:last-child>div,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child>div {
+    width: fit-content;
+    padding-inline: 0.8em;
+    padding-block: 0.15em;
+    border-radius: 0.3em;
+    font-weight: 600;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.housing_manage div[data-type="keys"] > div > .side-boxes > .box > .keys-list > table > tbody tr td:last-child > .remove-key,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child>.sell {
+    color: #ff5959;
+}
+
+.housing_manage div[data-type="keys"] > div > .side-boxes > .box > .keys-list > table > tbody tr td:last-child > .remove-key:hover,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child>.sell:hover {
+    color: #c02c2c;
+}
+
+.housing_manage div[data-type="keys"] > div > .side-boxes > .box > .keys-list > table > tbody tr td:last-child > .remove-key:active,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child>.sell:active {
+    color: #951b1b;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody tr td:last-child>.view-details,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child>.take-to-storage {
+    color: #59a9ff;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody tr td:last-child>.view-details:hover,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child>.take-to-storage:hover {
+    color: #337fd0;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody tr td:last-child>.view-details:active,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child>.take-to-storage:active {
+    color: #1966b8;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child>.remove {
+    color: #dfdfdfe0;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child>.remove:hover {
+    color: #a4a4a4e0;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td:last-child>.remove:active {
+    color: #757575e0;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody tr td .status-tag,
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td .furniture-environment-tag {
+    width: 6em;
+    padding-inline: 0.5em;
+    padding-block: 0.1em;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 100px;
+    border: 2px solid #ffffff05;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td .furniture-environment-tag.inside {
+    color: #dfe9ffcf;
+    background: #9dbbff0d;
+    border-color: #9dbbff24;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td .furniture-environment-tag.outside {
+    color: #e1ffdfcf;
+    background: #baff9d0d;
+    border-color: #baff9d24;
+}
+
+.housing_manage div[data-type="furniture"]>div>.side-boxes>.box>.furniture-list>table>tbody tr td .furniture-environment-tag.storage {
+    color: #efefefcf;
+    background: #cdcdcd0d;
+    border-color: #cdcdcd24;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody tr td .status-tag.upcoming {
+    color: #dffdffcf;
+    background: #9dfaff0d;
+    border-color: #9dfaff24;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody tr td .status-tag.paid {
+    color: #e1ffdfcf;
+    background: #baff9d0d;
+    border-color: #baff9d24;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody tr td .status-tag.unpaid {
+    color: #ffefdfcf;
+    background: #ffd89d0d;
+    border-color: #ffd89d24;
+}
+
+.housing_manage div[data-type="bills"]>div>.side-boxes>.box>.bills-list>table>tbody {
+    display: block;
+    max-height: 37em;
+    overflow: auto;
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+
+
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div {
+    height: auto;
+}
+
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations>.price {
+    font-weight: 500;
+    color: var(--secondary-text-color);
+}
+
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations>.levels {
+    display: flex;
+    gap: 0.35em;
+    margin-top: 0.3em;
+    margin-bottom: 0.2em;
+}
+
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations>.levels>div {
+    width: 1.7em;
+    height: 0.6em;
+    background: var(--back-btn-color);
+    border-radius: 0.35em;
+}
+
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations>.levels>div.current-level {
+    background: var(--main-color);
+}
+
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations>.levels>div.previous-level {
+    background: var(--main-color-hover);
+}
+
+
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations>.label,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div>.informations>.label {
+    font-weight: 700;
+    font-size: 1.45em;
+}
+
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations>.description,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div>.informations>.description {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+    letter-spacing: -0.01em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>.description {
+    width: 26em;
+}
+
+.housing_manage div[data-type="upgrades"]>div>.side-boxes>.box>.options>div>.informations>.button,
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div>.informations .button {
+    margin-top: 1em;
+    background: var(--main-color);
+    padding: 0.3em 1em;
+    font-weight: 600;
+    border-radius: 0.3em;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+    font-size: 1em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div>.informations {
+    line-height: 1.2;
+    width: 100%;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div>.informations .input-name {
+    color: var(--primary-text-color);
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div>.informations textarea {
+    background: var(--submenu-background-selected-hover);
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.074);
+    border-radius: 0.3em;
+    font-weight: 300;
+    color: var(--primary-text-color);
+    width: 100%;
+    padding: 0.8em;
+    height: 21.6em;
+    font-size: 0.9em;
+    line-height: 1.3;
+    resize: none;
+    margin-top: 1em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div.furnished {
+    position: absolute;
+    right: 0;
+    width: 26em;
+    bottom: 21em;
+    height: 3em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div.contact-number {
+    position: absolute;
+    right: 0;
+    bottom: 14em;
+    width: 26em;
+    height: 6em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div.sale {
+    position: absolute;
+    right: 0;
+    bottom: 7em;
+    width: 26em;
+    height: 6em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div.rental {
+    position: absolute;
+    bottom: 0em;
+    right: 0;
+    width: 26em;
+    height: 6em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div>.informations input.value {
+    font-weight: 300;
+    color: var(--primary-text-color);
+    width: 100%;
+    font-size: 0.85em;
+    line-height: 1.3;
+    resize: none;
+    margin-top: 0.5em;
+    background: var(--submenu-background-selected-hover);
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.075);
+    border-image: initial;
+    border-radius: 0.3em;
+    padding: 0.8em;
+}
+
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    width: 100%;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div {
+    background: var(--submenu-background-selected);
+    border: 1px solid #ffffff05;
+    overflow: hidden;
+    padding-block: 1em;
+    padding-inline: 1.5em;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div>.informations>.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.buttons>div .button.not-allowed {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div textarea[disabled] {
+    opacity: 0.7;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div textarea[disabled],
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div input[disabled],
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>div.not-allowed .cbx {
+    cursor: not-allowed !important;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>.images .images-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>.images .images-list>#add-image {
+    position: relative;
+
+    text-align: center;
+    background: var(--submenu-background-selected-hover);
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.074);
+    border-radius: 0.3em;
+    font-weight: 300;
+    color: var(--primary-text-color);
+    width: 100%;
+    height: 13em;
+
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>.images .images-list>#add-image .fa-plus {
+    background: var(--submenu-background-selected-hover);
+    position: absolute;
+    top: -0.05em;
+    height: 101%;
+    width: 100.7%;
+    left: -0.05em;
+    border-radius: 0.1em;
+    line-height: 5.5;
+    font-size: 2.5em;
+    transition: 0.2s;
+    opacity: 0.0;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>.images .images-list>#add-image:hover .fa-plus {
+    opacity: 1.0;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>.images .images-list>.second-image {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>.images .images-list>.second-image>#add-image {
+    position: relative;
+
+    text-align: center;
+    background: var(--submenu-background-selected-hover);
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.074);
+    border-radius: 0.3em;
+    font-weight: 300;
+    color: var(--primary-text-color);
+    width: 100%;
+
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>.images .images-list>.second-image>#add-image .fa-plus {
+    background: var(--submenu-background-selected-hover);
+    position: absolute;
+    top: -0.05em;
+    height: 101%;
+    width: 100.7%;
+    left: -0.05em;
+    border-radius: 0.1em;
+    line-height: 4;
+    font-size: 1.5em;
+    transition: 0.2s;
+    opacity: 0.0;
+}
+
+.housing_manage div[data-type="marketplace"]>div>.side-boxes>.box>.options>.images .images-list>.second-image>#add-image:hover .fa-plus {
+    opacity: 1.0;
+}
